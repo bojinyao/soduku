@@ -61,13 +61,17 @@ public class SquareBoard {
         return (size * y) + x;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("\n---\n");
         for (int y = 0; y < size; y++) {
             for (int x = 0; x < size; x++) {
-                builder.append(String.format(" %d", entries[x * y]));
+                builder.append(String.format(" %d", coordinateToIndex(x, y)));
             }
             builder.append("\n");
         }

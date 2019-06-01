@@ -1,9 +1,11 @@
 import Sudoku.SquareBoard;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SquareBoardTest {
+
 
     @Test
     void testSquareBoardBasic() {
@@ -50,6 +52,10 @@ public class SquareBoardTest {
 
     @Test
     void testSquareBoardPrint() {
+        int[] entries = {0, 1, 2, 3, 4, 5, 6, 7, 8};
+        SquareBoard board = new SquareBoard(entries, 3);
+
+        assertEquals("\n---\n 0 1 2\n 3 4 5\n 6 7 8\n\n---\n", board.toString());
 
     }
 }
