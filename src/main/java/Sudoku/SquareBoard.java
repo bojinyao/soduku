@@ -11,15 +11,15 @@ package Sudoku;
  * |
  * |
  * v
- *
+ * (x, y)
  * ----------------------------
- * | (0, 0) | (0, 1) | (0, 2) |
+ * | (0, 0) | (1, 0) | (2, 0) |
  * |    0   |    1   |    2   |
  * ----------------------------
- * | (1, 0) | (1, 1) | (1, 2) |
+ * | (0, 1) | (1, 1) | (2, 1) |
  * |    3   |    4   |    5   |
  * ----------------------------
- * | (2, 0) | (2, 1) | (2, 2) |
+ * | (0, 2) | (1, 2) | (2, 2) |
  * |    6   |    7   |    8   |
  * ----------------------------
  *
@@ -39,26 +39,26 @@ public class SquareBoard {
     /** Board is of size x size */
     private int size;
 
-    SquareBoard (int[] entries, int size) {
+    public SquareBoard (int[] entries, int size) {
         assert size > 0
                 && size * size == entries.length;
         this.entries = entries;
         this.size = size;
     }
 
-    int yVal(int index) {
-        assert index > 0 && index < entries.length;
+    public int yVal(int index) {
+        assert index >= 0 && index < entries.length;
         return index / size;
     }
 
-    int xVal(int index) {
-        assert index > 0 && index < entries.length;
+    public int xVal(int index) {
+        assert index >= 0 && index < entries.length;
         return index % size;
     }
 
-    int coordinateToIndex(int x, int y) {
-        assert x > 0 && y > 0 && x < size && y < size;
-        return x * size + y;
+    public int coordinateToIndex(int x, int y) {
+        assert x >= 0 && y >= 0 && x < size && y < size;
+        return (size * y) + x;
     }
 
     @Override
