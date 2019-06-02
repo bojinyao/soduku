@@ -18,7 +18,7 @@ public class Solver implements Runnable {
     private Stack<SquareBoard> jobs;
 
 
-    public qSolver(SquareBoard board) {
+    public Solver(SquareBoard board) {
         this.board = board;
         this.size = board.getSize();
         this.jobs = new Stack<SquareBoard>();
